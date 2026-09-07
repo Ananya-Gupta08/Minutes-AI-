@@ -15,7 +15,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title='Minutes AI API', version='1.0.0', lifespan=lifespan,
               description='Original meeting intelligence workspace. Analysis and playback are simulated.')
-app.add_middleware(CORSMiddleware,
-    allow_origins=[s.strip() for s in os.getenv('CORS_ORIGINS', 'http://localhost:3000,http://127.0.0.1:3000').split(',') if s.strip()],
-    allow_credentials=False, allow_methods=['GET', 'POST', 'PATCH', 'DELETE'], allow_headers=['Content-Type'])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:3000,http://127.0.0.1:3000"
+    ).split(","),
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(router)
