@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+backend/.venv/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# Testing
+frontend/test-results/
+frontend/playwright-report/
+.pytest_cache/
+
+# Editor and OS
+.vscode/
+.DS_Store
+Thumbs.db
