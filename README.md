@@ -399,4 +399,5 @@ Authenticated workspaces and permissions; Postgres and Alembic migrations; real 
 
 Public [Fireflies Notepad documentation](https://guide.fireflies.ai/articles/6653885315-learn-about-the-fireflies-notepad) was consulted for broad library/transcript/notes workflow patterns. Minutes AI is an original implementation and is not affiliated with Fireflies.ai.
 #   M i n u t e s - A I -  
+ #   M i n u t e s - A I -  
  
