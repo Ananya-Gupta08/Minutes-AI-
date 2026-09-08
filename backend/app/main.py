@@ -13,12 +13,18 @@ async def lifespan(app: FastAPI):
         seed_database()
     yield
 
+app = FastAPI(title="Minutes AI API", lifespan=lifespan)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://minutes-ai-nine.vercel.app",
+        origin.strip().rstrip('/')
+        for origin in os.getenv(
+            'CORS_ORIGINS',
+            'http://localhost:3000,http://127.0.0.1:3000',
+        ).split(',')
+        if origin.strip()
     ],
-    allow_origin_regex="https://.*\\.vercel\\.app",
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
